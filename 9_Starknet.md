@@ -56,7 +56,7 @@ starknet deploy --contract contract_compiled.json --no_wallet
 4. Interacción con el contrato
 
 ```bash
-starknet invoke --address ADDRESS_CONTRATO --abi contract_abi.json --function increase_balance --inputs 1234
+starknet invoke --address ADDRESS_CONTRATO --abi contract_abi.json --function increase_balance --inputs 1234 --max_fee 25607578957226
 starknet tx_status --hash HASH_DE_TRANSACCIÓN
 starknet call --address ADDRESS_CONTRATO --abi contract_abi.json --function get_balance
 ```
