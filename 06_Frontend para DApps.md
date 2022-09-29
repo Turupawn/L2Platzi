@@ -1,6 +1,6 @@
 1. Smart contract
 
-```
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
@@ -16,7 +16,7 @@ contract HelloWorld {
 
 2. HTML
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@ contract HelloWorld {
 
 3. JS
 
-```
+```js
 const NETWORK_ID = 421611
 const HELLO_WORLD_CONTRACT_ADDRESS = "0x278FD7D85f8A22bDa8a0d1E34602108A2DFE5275"
 const HELLO_WORLD_ABI_PATH = "./HelloWorld.json"
