@@ -1,7 +1,8 @@
 https://dev.to/turupawn/este-es-el-futuro-de-ethereum-7m7
 
+1. Contracto en Cairo
 
-
+`contract.cairo`
 ```cairo
 // Declare this file as a StarkNet contract.
 %lang starknet
@@ -37,10 +38,14 @@ func get_balance{
 }
 ```
 
+2. Crear una cuenta
+
 ```bash
-export STARKNET_WALLET="starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount"
 starknet deploy_account
+export STARKNET_WALLET="starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount"
 ```
+
+3. Lanzar un contrato
 
 ```bash
 starknet-compile contract.cairo --output contract_compiled.json --abi contract_abi.json
@@ -48,8 +53,10 @@ export STARKNET_NETWORK=alpha-goerli
 starknet deploy --contract contract_compiled.json --no_wallet
 ```
 
+4. Interacción con el contrato
 
 ```bash
-starknet invoke --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df --abi contract_abi.json --function increase_balance --inputs 1234
-starknet call --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df --abi contract_abi.json --function get_balance
+starknet invoke --address ADDRESS_CONTRATO --abi contract_abi.json --function increase_balance --inputs 1234
+starknet tx_status --hash HASH_DE_TRANSACCIÓN
+starknet call --address ADDRESS_CONTRATO --abi contract_abi.json --function get_balance
 ```
