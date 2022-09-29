@@ -38,7 +38,7 @@ interface IHelloWorld {
 }
 
 contract L2Operator {
-    IInbox inbox = IInbox(0x578BAde599406A8fE3d24Fd7f7211c0911F5B29e);
+    IInbox inbox = IInbox(0x6bebc4925716945d46f0ec336d5c2564f419682c);
 
     function setHelloInL2(
         address l2ContractAddress,
