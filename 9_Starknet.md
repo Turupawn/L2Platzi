@@ -37,7 +37,12 @@ func get_balance{
 }
 ```
 
+```bash
+export STARKNET_WALLET="starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount"
+starknet deploy_account
 ```
+
+```bash
 starknet-compile contract.cairo --output contract_compiled.json --abi contract_abi.json
 export STARKNET_NETWORK=alpha-goerli
 starknet deploy --contract contract_compiled.json --no_wallet
@@ -45,28 +50,6 @@ starknet deploy --contract contract_compiled.json --no_wallet
 
 
 ```bash
-export STARKNET_WALLET="starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount"
-starknet deploy_account
 starknet invoke --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df --abi contract_abi.json --function increase_balance --inputs 1234
 starknet call --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df --abi contract_abi.json --function get_balance
 ```
-
-
-starknet invoke \
-    --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df \
-    --abi contract_abi.json \
-    --function increase_balance \
-    --inputs 1234 \
-    --no_wallet
-
-starknet execute \
-    --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df \
-    --abi contract_abi.json \
-    --function increase_balance \
-    --inputs 1234 \
-    --no_wallet
-
-starknet call \
-    --address 0x06f9e8be19b746f6a25c0b329f554fc604d1e7cd17c146bfb223c854845a47df \
-    --abi contract_abi.json \
-    --function get_balance
