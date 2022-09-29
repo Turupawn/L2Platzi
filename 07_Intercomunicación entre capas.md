@@ -66,10 +66,9 @@ contract L2Operator {
 
 3. Parametros
 
-l2ContractAddress: ADDRESS DE CONTRATO EN L2
-_hello: ¡Hemos ejecutado esto desde L1!
-maxSubmissionCost: 80000000000
-maxGas: 90000000
-gasPriceBid: 90000000
-
-recuerda enviar 0.01 ether para el gas
+* l2ContractAddress: ADDRESS DE CONTRATO EN L2
+* _hello: `¡Hemos ejecutado esto desde L1!`
+* maxSubmissionCost: `80000000000`
+* maxGas: `90000000`
+* gasPriceBid: `90000000`
+* Value: `0.01` gas ether
