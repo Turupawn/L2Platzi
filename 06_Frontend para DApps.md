@@ -175,32 +175,32 @@ const setHello = async (hello_) => {
 
 ```json
 [
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "hello_",
-				"type": "string"
-			}
-		],
-		"name": "setHello",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "hello",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	}
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "hello_",
+        "type": "string"
+      }
+    ],
+    "name": "setHello",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "hello",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
 ]
 ```
 
