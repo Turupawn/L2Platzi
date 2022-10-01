@@ -1,4 +1,4 @@
-1. Smart Contract
+1. Lanza este Smart Contract en Goerli testnet via [Remix](https://remix.ethereum.org/)
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -163,13 +163,9 @@ abstract contract Mintable is Ownable, IMintable {
 }
 ```
 
-2. Crear una cuenta en Immutable Sandbox
+2. Crea una cuenta en [Immutable Sandbox](https://market.sandbox.immutable.com/)
 
-https://market.sandbox.immutable.com/
-
-3. Descargar el repositorio de ejemplos
-
-https://github.com/immutable/imx-examples.git
+3. Clona el [Repositorio de ejemplos](https://github.com/immutable/imx-examples.git)
 
 ```bash
 git clone https://github.com/immutable/imx-examples.git
@@ -177,22 +173,23 @@ cd imx-examples/
 npm install
 ```
 
-4. Crear un proyecto
+4. Crea un proyecto
 
-  1. Crear un archivo `.env` en base a `.env.examples` y editar `OWNER_ACCOUNT_PRIVATE_KEY`, `COLLECTION_CONTRACT_ADDRESS`.
-  1. Editar `src/onboarding/2-create-project.ts` para establecer las variables `name`, `company_name` y `contact_email`.
-  1. Ejectuar `npm run onboarding:create-project`
+    1. Crea un archivo `.env` en base a `.env.examples` y edita `OWNER_ACCOUNT_PRIVATE_KEY`, `COLLECTION_CONTRACT_ADDRESS`.
+    2. Edita `src/onboarding/2-create-project.ts` para establecer las variables `name`, `company_name` y `contact_email`.
+    3. Ejectua `npm run onboarding:create-project`
 
 5. Crear una colección
 
-  1. Editar `COLLECTION_PROJECT_ID` en el archivo `.env`
-  1. Editar name, description, icon, metadataapiurl, collectionimageurl en el archivo `src/onboarding/3-create-collection.ts`
-  1. Ejectuar `npm run onboarding:create-collection`
+    1. Edita `COLLECTION_PROJECT_ID` en el archivo `.env`
+    2. Edita el `name`, `description`, `icon`, `metadataapiurl`, `collectionimageurl` en el archivo `src/onboarding/3-create-collection.ts`
+    3. Ejectua `npm run onboarding:create-collection`
 
-6. Crear Schema de Metadata
+6. Crea el Schema de Metadata
 
-  1. Editar metadata en `src/onboarding/4-add-metadata-schema.ts`
-```json
+    1. Edita la metadata en `src/onboarding/4-add-metadata-schema.ts`
+
+```ts
 {
   name: 'name',
   type: MetadataTypes.Text
@@ -211,14 +208,14 @@ npm install
   filterable: true
 },
 ```
-  1. Ejectuar `npm run onboarding:add-metadata-schema`
+    2. Ejectua `npm run onboarding:add-metadata-schema`
 
-6. Mintear un NFT
+6. Mintea un NFT
 
-  1. Editar `PRIVATE_KEY1`, `TOKEN_ID`, `TOKEN_ADDRESS` en el archivo `.env`
-  1. Editar `wallet` y `number` en el archivo `src/bulk-mint.ts`
+    1. Edita `PRIVATE_KEY1`, `TOKEN_ID`, `TOKEN_ADDRESS` en el archivo `.env`
+    2. Edita `wallet` y `number` en el archivo `src/bulk-mint.ts`
 ```ts
 const wallet="0xb6F5414bAb8d5ad8F33E37591C02f7284E974FcB"
 const number=1
 ```
-  1. Ejecutar `npm run bulk-mint`
+    3. Ejecuta `npm run bulk-mint`
