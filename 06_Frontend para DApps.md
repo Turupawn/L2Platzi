@@ -1,4 +1,4 @@
-1. Smart contract
+1. Lanza el Smart contract en [Remix](https://remix.ethereum.org/)
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -14,8 +14,9 @@ contract HelloWorld {
 }
 ```
 
-2. HTML
+2. Crea el archivo HTML
 
+`index.html`
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -44,8 +45,9 @@ contract HelloWorld {
 </script>
 ```
 
-3. JS
+3. Crea el archivo de JS
 
+`blockchain_stuff.js`
 ```js
 const NETWORK_ID = 421611
 const HELLO_WORLD_CONTRACT_ADDRESS = "0x278FD7D85f8A22bDa8a0d1E34602108A2DFE5275"
@@ -171,8 +173,9 @@ const setHello = async (hello_) => {
 }
 ```
 
-4. HelloWorld.json
+4. Coloca el archivo JSON ABI
 
+`HelloWorld.json`
 ```json
 [
   {
@@ -204,7 +207,7 @@ const setHello = async (hello_) => {
 ]
 ```
 
-5. Interactuar con el sitio web
+5. Interactua con el sitio web
 
 ```bash
 npm install -g lite-server
