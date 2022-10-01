@@ -1,5 +1,3 @@
-## Notas: Lanzar un token en Capa 2
-
 1. Dirígete al sitio web de [Remix](https://remix.ethereum.org/)
 
 2. Coloca el código de un token ERC20
