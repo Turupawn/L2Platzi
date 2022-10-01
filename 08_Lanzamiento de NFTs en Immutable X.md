@@ -188,7 +188,9 @@ npm install
 6. Crea el Schema de Metadata
 
     1. Edita la metadata en `src/onboarding/4-add-metadata-schema.ts`
+    2. Ejectua `npm run onboarding:add-metadata-schema`
 
+`ejemplo de schema de metadata`
 ```ts
 {
   name: 'name',
@@ -208,7 +210,6 @@ npm install
   filterable: true
 },
 ```
-    2. Ejectua `npm run onboarding:add-metadata-schema`
 
 6. Mintea un NFT
 
