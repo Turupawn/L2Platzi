@@ -1,18 +1,15 @@
-Network Name
+## Agregar Optimism One a Metamask
 
-Arbitrum One
+* Nombre de la red: `Optimism`
+* Nueva dirección URL de RPC: `[https://arb1.arbitrum.io/rpc](https://mainnet.optimism.io)` 
+* Identificador de cadena: `10`
+* Símbolo de moneda: `ETH`
+* Dirección URL del explorador de bloques: `https://optimistic.etherscan.io/`
 
-New RPC URL
+## Agregar Arbitrum One a Metamask
 
-https://arb1.arbitrum.io/rpc 
-Chain ID
-
-42161
-
-Currency Symbol
-
-ETH
-
-Block Explorer URL
-
-https://arbiscan.io/ 
+* Nombre de la red: `Arbitrum One`
+* Nueva dirección URL de RPC: `https://arb1.arbitrum.io/rpc` 
+* Identificador de cadena: `42161`
+* Símbolo de moneda: `ETH`
+* Dirección URL del explorador de bloques: `https://arbiscan.io/` 
