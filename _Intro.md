@@ -6,7 +6,7 @@
 * Símbolo de moneda: `ETH`
 * Dirección URL del explorador de bloques: `https://arbiscan.io/` 
 
-## Agregar Optimism One a Metamask
+## Agregar Optimism a Metamask
 
 * Nombre de la red: `Optimism`
 * Nueva dirección URL de RPC: `https://mainnet.optimism.io` 
