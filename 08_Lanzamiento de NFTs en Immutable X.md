@@ -235,4 +235,7 @@ const wallet = "TO ADDRESS PUBLICO AQUI";
 const number = 1;
 const tokenId = 1;
 ```
-    3. Ejecuta `npm run bulk-mint`
+
+3. Ejecuta `npm run bulk-mint`
+
+Ahora tu asset debería estar visible en tu colección en [El Sandbox de Immutable](market.sandbox.immutable.com).
