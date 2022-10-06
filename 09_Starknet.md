@@ -1,5 +1,12 @@
 https://dev.to/turupawn/este-es-el-futuro-de-ethereum-7m7
 
+```bash
+sudo apt install -y python3.8-venv libgmp3-dev
+python3.8 -m venv ~/cairo_venv
+source ~/cairo_venv/bin/activate
+pip3 install cairo-lang
+```
+
 1. Contrato en Cairo
 
 `contract.cairo`
@@ -41,19 +48,37 @@ func get_balance{
 2. Crear una cuenta
 
 ```bash
+export STARKNET_NETWORK=alpha-goerli
+export STARKNET_WALLET=starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount
 starknet deploy_account
-export STARKNET_WALLET="starkware.starknet.wallets.open_zeppelin.OpenZeppelinAccount"
 ```
 
 3. Lanzar un contrato
 
 ```bash
 starknet-compile contract.cairo --output contract_compiled.json --abi contract_abi.json
-export STARKNET_NETWORK=alpha-goerli
 starknet deploy --contract contract_compiled.json --no_wallet
 ```
 
+Luego esperamos a que la transacción tenga el estado `ACCEPTED_ON_L2` con ayuda del siguiente comando:
+
+```bash
+starknet tx_status --hash HASH_DE_TRANSACCIÓN
+```
+
 4. Interacción con el contrato
+
+* Braavos Wallet
+https://chrome.google.com/webstore/detail/braavos-wallet/jnlgamecbpmbajjfhmmmlhejkemejdma
+* Bridge de Starknet desde Goerli
+https://goerli.etherscan.io/address/0xc3511006C04EF1d78af4C8E0e74Ec18A6E64Ff9e#writeProxyContract
+* Testnet para interacutar con el contrato
+https://testnet.starkscan.co/
+
+
+
+
+Nota 1: También puedes interactuar con el contrato desde la línea de comandos
 
 ```bash
 starknet invoke --address ADDRESS_CONTRATO --abi contract_abi.json --function increase_balance --inputs 1234 --max_fee 25607578957226
@@ -61,7 +86,7 @@ starknet tx_status --hash HASH_DE_TRANSACCIÓN
 starknet call --address ADDRESS_CONTRATO --abi contract_abi.json --function get_balance
 ```
 
-Nota: El smart contract que lanzamos usando cairo tiene el mismo funcionamiento que el siguiente contrato en solidity
+Nota 2: El smart contract que lanzamos usando cairo tiene el mismo funcionamiento que el siguiente contrato en solidity
 
 ```solidity
 // SPDX-License-Identifier: MIT
