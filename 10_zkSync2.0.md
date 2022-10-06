@@ -1,8 +1,38 @@
-1. Obtener fondos en zkSync 2.0
+1. Instala Docker
+
+Puedes instalar Docker Desktop en Windows y MacOs desde [este enlace](https://www.docker.com/products/docker-desktop/).
+O desde linux con los siguientes comandos:
+
+```bash
+sudo apt-get update
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-4.8.2-amd64.deb
+sudo apt install ./docker-desktop-4.8.2-amd64.deb
+systemctl --user start docker-desktop
+sudo usermod -aG docker $USER
+```
+
+Luego asegurate que tienes instalado docker correctamente ejecutando el siguiente comando:
+```bash
+systemctl start docker
+```
+
+1. Obten fondos en zkSync 2.0
 
 https://portal.zksync.io/bridge
 
-2. Preparar el repositorio
+2. Prepara el repositorio
 
 ```bash
 npm install --global yarn
@@ -12,7 +42,7 @@ yarn init -y
 yarn add -D typescript ts-node ethers zksync-web3 hardhat @matterlabs/hardhat-zksync-solc @matterlabs/hardhat-zksync-deploy dotenv @openzeppelin/contracts
 ```
 
-3. Archivo de configuración de Hardhat
+3. Crea el archivo de configuración de Hardhat
 
 `hardhat.config.ts`
 ```ts
@@ -51,7 +81,7 @@ module.exports = {
 };
 ```
 
-4. Establecer variables de entorno
+4. Establece las variables de entorno
 
 `.env`
 ```bash
@@ -59,7 +89,7 @@ PRIVATE_KEY=TULLAVEPRIVADAAQUI
 RPC_URL=https://goerli.infura.io/v3/TULLAVEPRIVADAAQUI
 ```
 
-5. Agregar el Smart Contract
+5. Agrega el Smart Contract
 
 `contracts/SimpleToken.sol`
 ```solidity
@@ -79,7 +109,7 @@ contract SimpleToken is ERC20 {
 }
 ```
 
-6. Archivo de deploy
+6. Crea el archivo de deploy
 
 `deploy/deploy.ts`
 ```ts
@@ -109,13 +139,13 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 }
 ```
 
-7. Lanzamiento
+7. Compila y lanza el token
 
 ```bash
 yarn hardhat compile
 yarn hardhat deploy-zksync
 ```
 
-8. zkSync Scan
+8. Verifica tu lanzamiento desde zkScan
 
 https://zksync2-testnet.zkscan.io/
