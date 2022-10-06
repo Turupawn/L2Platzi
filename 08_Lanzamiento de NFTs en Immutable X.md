@@ -1,10 +1,11 @@
-1. Lanza este Smart Contract en Goerli testnet via [Remix](https://remix.ethereum.org/)
+1. Lanza el contrato llamado `MyImmutableXCollectionDemo` en Goerli testnet via [Remix](https://remix.ethereum.org/)
 
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 library Bytes {
     /**
@@ -161,7 +162,21 @@ abstract contract Mintable is Ownable, IMintable {
         bytes memory blueprint
     ) internal virtual;
 }
+
+contract MyImmutableXCollectionDemo is ERC721, Mintable {
+    constructor() ERC721("My IMX Collection Demo", "MIMXNFT") Mintable(msg.sender, 0x7917eDb51ecD6CdB3F9854c3cc593F33de10c623) {}
+
+    function _mintFor(
+        address user,
+        uint256 id,
+        bytes memory
+    ) internal override {
+        _safeMint(user, id);
+    }
+}
 ```
+
+Nota dependiendo de tu network puedes escoger el address de IMX en el repositorio de [imx-contracts](https://github.com/immutable/imx-contracts/#immutable-contract-addresses).
 
 2. Crea una cuenta en [Immutable Sandbox](https://market.sandbox.immutable.com/)
 
