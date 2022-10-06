@@ -112,6 +112,7 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 7. Lanzamiento
 
 ```bash
+yarn hardhat compile
 yarn hardhat deploy-zksync
 ```
 
