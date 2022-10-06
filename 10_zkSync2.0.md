@@ -81,6 +81,7 @@ contract SimpleToken is ERC20 {
 
 6. Archivo de deploy
 
+`deploy/deploy.ts`
 ```ts
 import { utils, Wallet } from "zksync-web3";
 import * as ethers from "ethers";
