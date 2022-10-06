@@ -231,7 +231,8 @@ npm install
     1. Edita `PRIVATE_KEY1`, `TOKEN_ID`, `TOKEN_ADDRESS` en el archivo `.env`
     2. Edita `wallet` y `number` en el archivo `src/bulk-mint.ts`
 ```ts
-const wallet="0xb6F5414bAb8d5ad8F33E37591C02f7284E974FcB"
-const number=1
+const wallet = "TO ADDRESS PUBLICO AQUI"
+const number = 1
+const tokenId = 1;
 ```
     3. Ejecuta `npm run bulk-mint`
