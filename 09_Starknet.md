@@ -1,5 +1,3 @@
-https://dev.to/turupawn/este-es-el-futuro-de-ethereum-7m7
-
 ```bash
 sudo apt install -y python3.8-venv libgmp3-dev
 python3.8 -m venv ~/cairo_venv
