@@ -1,11 +1,30 @@
+1. Instala las dependencias
+
+Debes instalar las siguientes librerías dependiendo de tu sistema operativo.
+
+En Linux
 ```bash
 sudo apt install -y python3.8-venv libgmp3-dev
+```
+
+En MaxOs
+```bash
+brew install python@3.8
+brew install gmp
+```
+
+En Windows debes instalar Python 3 desde el [sitio web oficial](https://www.python.org/downloads/windows/) y luego estas dependencias a través de `pip`.
+```bash
+pip3 install ecdsa fastecdsa sympy
+```
+
+```bash
 python3.8 -m venv ~/cairo_venv
 source ~/cairo_venv/bin/activate
 pip3 install cairo-lang
 ```
 
-1. Contrato en Cairo
+2. Contrato en Cairo
 
 `contract.cairo`
 ```cairo
@@ -43,7 +62,7 @@ func get_balance{
 }
 ```
 
-2. Crear una cuenta
+3. Crea una cuenta
 
 ```bash
 export STARKNET_NETWORK=alpha-goerli
@@ -51,7 +70,7 @@ export STARKNET_WALLET=starkware.starknet.wallets.open_zeppelin.OpenZeppelinAcco
 starknet deploy_account
 ```
 
-3. Lanzar un contrato
+4. Lanza un contrato
 
 ```bash
 starknet-compile contract.cairo --output contract_compiled.json --abi contract_abi.json
@@ -64,7 +83,7 @@ Luego esperamos a que la transacción tenga el estado `ACCEPTED_ON_L2` con ayuda
 starknet tx_status --hash HASH_DE_TRANSACCIÓN
 ```
 
-4. Interacción con el contrato
+5. Interactúa con el contrato
 
 * Braavos Wallet
 https://chrome.google.com/webstore/detail/braavos-wallet/jnlgamecbpmbajjfhmmmlhejkemejdma
@@ -72,9 +91,6 @@ https://chrome.google.com/webstore/detail/braavos-wallet/jnlgamecbpmbajjfhmmmlhe
 https://goerli.etherscan.io/address/0xc3511006C04EF1d78af4C8E0e74Ec18A6E64Ff9e#writeProxyContract
 * Testnet para interacutar con el contrato
 https://testnet.starkscan.co/
-
-
-
 
 Nota 1: También puedes interactuar con el contrato desde la línea de comandos
 
@@ -86,7 +102,7 @@ starknet call --address ADDRESS_CONTRATO --abi contract_abi.json --function get_
 
 Nota 2: El smart contract que lanzamos usando cairo tiene el mismo funcionamiento que el siguiente contrato en solidity
 
-```solidity
+```js
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
