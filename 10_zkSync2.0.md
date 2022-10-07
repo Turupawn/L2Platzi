@@ -28,11 +28,11 @@ Luego asegurate que tienes instalado docker correctamente ejecutando el siguient
 systemctl start docker
 ```
 
-1. Obten fondos en zkSync 2.0
+2. Obten fondos en zkSync 2.0
 
 https://portal.zksync.io/bridge
 
-2. Prepara el repositorio
+3. Prepara el repositorio
 
 ```bash
 npm install --global yarn
@@ -42,7 +42,7 @@ yarn init -y
 yarn add -D typescript ts-node ethers zksync-web3 hardhat @matterlabs/hardhat-zksync-solc @matterlabs/hardhat-zksync-deploy dotenv @openzeppelin/contracts
 ```
 
-3. Crea el archivo de configuración de Hardhat
+4. Crea el archivo de configuración de Hardhat
 
 `hardhat.config.ts`
 ```ts
@@ -81,7 +81,7 @@ module.exports = {
 };
 ```
 
-4. Establece las variables de entorno
+5. Establece las variables de entorno
 
 `.env`
 ```bash
@@ -89,7 +89,7 @@ PRIVATE_KEY=TULLAVEPRIVADAAQUI
 RPC_URL=https://goerli.infura.io/v3/TULLAVEPRIVADAAQUI
 ```
 
-5. Agrega el Smart Contract
+6. Agrega el Smart Contract
 
 `contracts/SimpleToken.sol`
 ```solidity
@@ -109,7 +109,7 @@ contract SimpleToken is ERC20 {
 }
 ```
 
-6. Crea el archivo de deploy
+7. Crea el archivo de deploy
 
 `deploy/deploy.ts`
 ```ts
@@ -139,13 +139,13 @@ export default async function (hre: HardhatRuntimeEnvironment) {
 }
 ```
 
-7. Compila y lanza el token
+8. Compila y lanza el token
 
 ```bash
 yarn hardhat compile
 yarn hardhat deploy-zksync
 ```
 
-8. Verifica tu lanzamiento desde zkScan
+9. Verifica tu lanzamiento desde zkScan
 
 https://zksync2-testnet.zkscan.io/
